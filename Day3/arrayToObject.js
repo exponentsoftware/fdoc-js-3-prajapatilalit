@@ -4,14 +4,16 @@ const students = [
 ];
 
 const convertArrayToObject = (studentData) => {
+  const ArrObject = [];
   studentData.forEach((item1) => {
     const objectArray = {
       name: item1[0],
       skills: item1[1],
       scores: item1[2],
     };
-    return console.log(objectArray);
+    return ArrObject.push(objectArray);
   });
+  return ArrObject;
 };
 
-convertArrayToObject(students);
+console.log(convertArrayToObject(students));
