@@ -71,6 +71,7 @@ const products = [
   },
 ];
 
+// SignUp function
 const newUser = {
   _id: "eefamj",
   username: "Pallavi",
@@ -90,3 +91,23 @@ const Signup = (userData) => {
 };
 
 console.log(Signup(newUser));
+
+// Login function
+
+let email = "martha@martha.com";
+let password = "123222";
+
+const SignIn = (email, password) => {
+  const foundUser = users.find(
+    (user) => user.email === email && user.password === password
+  );
+
+  if (!foundUser.isLoggedIn) {
+    foundUser.isLoggedIn = true;
+    return "user signed In successfully";
+  } else {
+    return "user already login";
+  }
+};
+
+console.log(SignIn(email, password));
