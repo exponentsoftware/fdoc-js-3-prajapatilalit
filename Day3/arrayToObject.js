@@ -3,11 +3,17 @@ const students = [
   ["John", ["HTM", "CSS", "JS", "React"], [85, 80, 85, 80]],
 ];
 
-const arr1 = students.forEach((item1) => {
-  const objectArray = {
-    name: item1[0],
-    skills: item1[1],
-    scores: item1[2],
-  };
-  console.log(objectArray);
-});
+const convertArrayToObject = (studentData) => {
+  const ArrObject = [];
+  studentData.forEach((item1) => {
+    const objectArray = {
+      name: item1[0],
+      skills: item1[1],
+      scores: item1[2],
+    };
+    return ArrObject.push(objectArray);
+  });
+  return ArrObject;
+};
+
+console.log(convertArrayToObject(students));
